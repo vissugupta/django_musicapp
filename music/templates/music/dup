@@ -1,0 +1,11 @@
+def index(request):
+    all_album= Album.objects.all()
+    context={'all_album':all_album,}
+
+    return render(request,'music/index.html',context)
+
+def details(request, album_id):
+    all_album = get_object_or_404(Album,pk=album_id)
+
+
+    return render(request,'music/details.html',{'all_album': all_album})

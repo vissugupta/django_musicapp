@@ -1,0 +1,58 @@
+body{
+    background: gainsboro;
+
+}
+
+
+#menu li {
+    list-style: none;
+    display: inline-block;
+    padding: 10px;
+}
+
+
+
+
+#menu li a{
+    display: inline-block;
+    text-decoration: none;
+    text-anchor: bottom;
+
+}
+
+#list-div {
+    padding: 10px;
+    border: 5px solid mintcream;
+    background: ghostwhite;
+
+}
+
+
+#list-div-text{
+    text-align: center;
+
+}
+#list-div-text a{
+    color: black ;
+    text-transform: uppercase;
+    font-size: 20px;
+
+
+}
+
+#main-subheading a {
+    font-style: italic;
+    font-size: 10px;
+
+
+}
+
+#dt-title-img-holder{
+    background: ghostwhite;
+}
+
+#dt-song-holder{
+    background: ghostwhite;
+    margin-top: 10px;
+
+}

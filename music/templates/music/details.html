@@ -1,0 +1,49 @@
+{% extends 'music/base.html' %}
+{% block body %}
+<div class="container-fluid" id="wrapper">
+      <div class="container">
+          <div  id="dt-title-img-holder" class="row" >
+                  <div class="col-md-4 col-sm-4" id="dt-img-holder">
+                      <img class="img-responsive" src="{{ album.album_icon.url }} " height="200px" width="200px">
+                  </div>
+                  <div class="col-md-8 col-sm-8" id="dt-text-holder" >
+                      <a href="{% url 'music:add-song' %}">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;
+                        Add song
+                     </a>
+                      <h1>{{ album.album_name }}</h1>
+                      <p><strong>{{ album.genre }}</strong></p>
+                  </div>
+          </div>
+      </div>
+      <div id="dt-song-holder" class="container" >
+                    {% if error_message %}
+                    <p><strong>{{ error_message }}</strong></p>
+
+                        {% endif %}
+                     <h1> List of Songs</h1>
+                      <ul class="inline-group">
+                        {% for song in album.song_set.all %}
+                            <li class="inline" style="list-style: none">
+                                <div>
+                                    <h3 style="text-transform: capitalize">{{ song.file_name}}</h3>
+                                </div>
+                                <div  style="border: 4px solid darkgray; width: 60%;" >
+                                    <audio controls>
+                                         <source src="{{ song.song_choose.url}}" type="audio/mpeg"/>
+
+                                    </audio>
+                                </div>
+                            </li><br>
+
+                        {% endfor %}
+                      </ul>
+      </div>
+
+
+      <div  class="container embed-responsive embed-responsive-16by9"> id="dt-frame-holder">
+            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/2DBBb3_p8eg" width="400px" height="200px" ></iframe>
+      </div>
+
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'music/base.html' %}
+{% block body %}
+
+
+    <ul id="menu">
+
+            {% for albums in object_list %}
+
+                        <li>
+                            <div id="list-div">
+
+                                   <a href="{% url 'music:details' albums.id %}">
+                                       <img src="{{ albums.album_icon.url }}" height="200px" width="200px">
+                                   </a>
+                                   <div id="list-div-text">
+                                       <a  href="{% url 'music:details' albums.id %}" >
+                                           {{ albums.album_name}}
+                                       </a>
+                                       <div id="main-subheading">
+                                           <a  href="{% url 'music:details' albums.id %}" >
+
+                                               {{ albums.artist_name}}
+
+                                           </a>
+                                       </div>
+                                   </div>
+
+                            </div>
+                       </li>
+            {% endfor %}
+    </ul>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+.carousel-inner image{
+    transition: .5s;
+    height: 200px;
+    display: none;
+    position: relative;
+    transition(.6s ease-in-out left);
+}
